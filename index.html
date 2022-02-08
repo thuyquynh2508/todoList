@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
 </head>
 <body>
@@ -14,10 +15,10 @@
         <div id="home" class="main js-home">
             <div id="home-header">
                 <div class="header-nav">
-                    <button class="calendar-btn btn"><i class="fas fa-calendar-alt nav-icon header-icon"></i></button>
+                    <button class="btn header-btn"><i class="fas fa-calendar-alt nav-icon header-icon"></i></button>
                     <p class="date-text">Tuesday, 24 November</p>
-                    <button class="search-btn btn"><i class="fas fa-search nav-icon header-icon"></i></a></li>
-                    <button class="bell-btn btn"><i class="far fa-bell nav-icon header-icon"></i></a></li>
+                    <button class="btn header-btn"><i class="fas fa-search nav-icon header-icon"></i></a></li>
+                    <button class="btn header-btn notification-btn"><i class="far fa-bell nav-icon header-icon"></i></a></li>
                 </div>
             </div>
             <div id="home-content">
@@ -68,38 +69,11 @@
                 <!-- TASK HOME-->
                 <div class="home-task pd-section">
                     <div class="tasks-bar">
-                        <h3 class="tasks-header">Tasks</h3>
+                        <h2 class="title-heading">Tasks</h2>
                         <a href="" class="tasks-view-all-btn">View All</a>
                     </div>
                     <ul class="tasks-content">
-                        <li class="tasks-item">
-                            <i class="far fa-circle task-circle-icon"></i>
-                            <div class="task-name">
-                                <p class="task-label">Doing housework</p>
-                                <i class="fas fa-caret-down more-icon"></i>
-                            </div>
-                        </li>
-                        <li class="tasks-item">
-                            <i class="far fa-circle task-circle-icon"></i>
-                            <div class="task-name">
-                                <p class="task-label">Meeting with Phuong</p>
-                                <i class="fas fa-caret-down more-icon"></i>
-                            </div>
-                        </li>
-                        <li class="tasks-item">
-                            <i class="far fa-circle task-circle-icon"></i>
-                            <div class="task-name">
-                                <p class="task-label">Doing todoList project</p>
-                                <i class="fas fa-caret-down more-icon"></i>
-                            </div>
-                        </li>
-                        <li class="tasks-item">
-                            <i class="far fa-circle task-circle-icon"></i>
-                            <div class="task-name">
-                                <p class="task-label">Finish MyCV project</p>
-                                <i class="fas fa-caret-down more-icon"></i>
-                            </div>
-                        </li>
+                        <!-- Xử lý bởi JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -109,7 +83,7 @@
         <div id="chart" class="main js-chart">
             <div class="chart-priority pd-section">
                 <div class="chart-header">
-                    <h2 class="chart-title">Priority</h2>
+                    <h2 class="title-heading">Priority</h2>
                     <p class="chart-info">Tasks in a week</p>
                 </div>
                 <div class="chart-note">
@@ -144,7 +118,7 @@
             </div>
             <div class="chart-activity pd-section">
                 <div class="chart-header">
-                    <h2 class="chart-title">Activity</h2>
+                    <h2 class="title-heading">Activity</h2>
                     <p class="chart-info">Tasks in a week</p>
                 </div>
                 <div class="chart-layout">      
@@ -195,16 +169,14 @@
 
                         var radius = 140;
                         
-                        // Góc bắt đầu là 1.1PI
                         var startAngleBegin = 0.7 * Math.PI;
                         var startAngleFinish = 0.7 * Math.PI;
-                        // Góc kết thúc là 1.9PI
+                        
                         var endAngleBegin = 2.3 * Math.PI;
                         var endAngleFinish = 2.0 * Math.PI;
-                        // Cùng chiều kim đồng hồ
+                        
                         var counterClockwise = false;
                         
-                        // Vẽ đường cung
                         contextBegin.beginPath();
                         contextBegin.arc(x, y, radius, startAngleBegin, endAngleBegin, counterClockwise);
                         contextBegin.lineWidth = 15;
@@ -234,7 +206,7 @@
         </div>
         <!-- TASK -->
         <div id="task" class="main js-task">
-            <h2 class="task-title">Tasks</h2>
+            <h2 class="title-heading">Tasks</h2>
             <div class="calendar-week pd-section">
                 <button class="day-btn">Mon<br>24</button>
                 <button class="day-btn">Tue<br>25</button>
@@ -244,100 +216,82 @@
                 <button class="day-btn">Sat<br>29</button>
                 <button class="day-btn">Sun<br>30</button>
             </div>
-
-            <div class="work-time-section pd-section">
-                <div class="time">
-                    <p>12AM <br><br><br><br><br>14PM</p> 
-                </div>
-                <div class="work">
-                    <p class="work-priority">Low Priority</p>
-                    <h3 class="work-name">Doing housework</h3>
-                    <p class="work-status">On going</p>
-                </div>
-            </div>
-
-            <div class="work-time-section pd-section">
-                <div class="time">
-                    <p>14PM <br><br><br><br><br>15PM</p> 
-                </div>
-                <div class="work">
-                    <p class="work-priority">Medium Priority</p>
-                    <h3 class="work-name">Meeting with Ha</h3>
-                    <p class="work-status">Canceled</p>
-                </div>
-            </div>
-
-            <div class="work-time-section pd-section">
-                <div class="time">
-                    <p>15PM <br><br><br><br><br>17PM</p> 
-                </div>
-                <div class="work">
-                    <p class="work-priority">Medium Priority</p>
-                    <h3 class="work-name">Doing todoList project</h3>
-                    <p class="work-status">On going</p>
-                </div>
-            </div>
+            <ul class="work-list">
+                <!-- javascript cung cấp dữ liệu -->
+            </ul>
+            
         </div>
+        <!-- FOOTER -->
         <div id="footer">
-            <div class="foot-nav">
+            <div class="foot-nav js-footer">
                 <ul class="nav-list">
-                    <li><button class="foot-btn js-home-btn"><i class="fas fa-home nav-icon foot-icon"></i></button></li>
-                    <li><button class="foot-btn js-task-btn"><i class="fas fa-file-alt nav-icon foot-icon"></i></button></li>
+                    <li><button class="btn foot-btn js-home-btn"><i class="fas fa-home nav-icon foot-icon"></i></button></li>
+                    <li><button class="btn foot-btn js-task-btn"><i class="fas fa-file-alt nav-icon foot-icon"></i></button></li>
                 </ul>
-                <button class="foot-btn add-btn js-add-btn"><i class="fas fa-plus-circle add-icon"></i></button>
+                <button class="btn foot-btn add-btn js-add-btn"><i class="fas fa-plus-circle add-icon"></i></button>
                 <ul class="nav-list">
-                    <li><button class="foot-btn js-chart-btn"><i class="far fa-chart-bar nav-icon foot-icon"></i></button></li>
-                    <li><button class="foot-btn js-person-btn"><i class="fas fa-user-alt nav-icon foot-icon"></i></button></li>
+                    <li><button class="btn foot-btn js-chart-btn"><i class="far fa-chart-bar nav-icon foot-icon"></i></button></li>
+                    <li><button class="btn foot-btn js-person-btn"><i class="fas fa-user-alt nav-icon foot-icon"></i></button></li>
                 </ul>
             </div>
         </div>
-
     </div>
-    
-    <script>
-        const taskBtn = document.querySelector('.js-task-btn');
-        const chartBtn = document.querySelector('.js-chart-btn');
-        const homeBtn = document.querySelector('.js-home-btn');
-        const personBtn = document.querySelector('.js-person-btn');
-
-        const taskScreen = document.querySelector('.js-task');
-        const chartScreen = document.querySelector('.js-chart');
-        const homeScreen = document.querySelector('.js-home');
-        const personScreen = document.querySelector('.js-person');
-
-        function showTaskScreen() {
-            personScreen.classList.remove('open');
-            homeScreen.classList.add('hide');
-            chartScreen.classList.remove('open');
-            taskScreen.classList.add('open');
-        }
-
-        function showChartScreen() {
-            taskScreen.classList.remove('open');
-            personScreen.classList.remove('open');
-            homeScreen.classList.add('hide');
-            chartScreen.classList.add('open');
-        }
-
-        function showPersonScreen() {
-            taskScreen.classList.remove('open');
-            homeScreen.classList.add('hide');
-            chartScreen.classList.remove('open');
-            personScreen.classList.add('open');
-        }
-
-        function showHomeScreen() {
-            taskScreen.classList.remove('open');
-            personScreen.classList.remove('open');
-            chartScreen.classList.remove('open');
-            homeScreen.classList.remove('hide');
-        }
-
-        taskBtn.addEventListener('click', showTaskScreen)
-        chartBtn.addEventListener('click',showChartScreen)
-        homeBtn.addEventListener('click', showHomeScreen)
-        personBtn.addEventListener('click', showPersonScreen)
-    </script>
+    <div class="footer-add js-add-screen">
+        <div class="add-modal js-add-modal">
+            <header class="add-modal__header">
+                <h2>Add a Task</h2>
+            </header>
+                <form class="add-modal__body"method="post" action="#">
+                    <div class="add-modal__time" >
+                        <div class="add-modal__time-date">
+                            <h4 class="add-modal__heading">Date:</h4>
+                            <input class="add-modal__time-input js-input-date" type="date" name="dateChoose">
+                            <button class="add-modal__time-btn"><i class="nav-icon far fa-calendar-alt"></i></button>
+                        </div>
+                        <div class="add-modal__time-hour">
+                            <h4 class="add-modal__heading">Time</h4>
+                            <div class="add-modal__time-hour-section">
+                                Begin:
+                                <input class="add-modal__time-input js-time-begin" type="time" name="timeFrom">
+                                <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
+                            </div>
+                            <div class="add-modal__time-hour-section">  
+                                Finish:
+                                <input class="add-modal__time-input js-time-finish" type="time" name="timeTo">
+                                <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-modal__priority">
+                        <h4 class="add-modal__heading">Priority</h4>
+                        <ul class="add-modal__priority-list">
+                            <li>
+                                <input name="priorityWork" type="radio" value="Low"> 
+                                <span class="add-modal__priority-item">Low</span> 
+                            </li>
+                            <li>
+                                <input name="priorityWork" type="radio" value="Medium"> 
+                                <span class="add-modal__priority-item">Medium</span> 
+                            </li>
+                            <li>
+                                <input name="priorityWork" type="radio" value="High">
+                                <span class="add-modal__priority-item">High</span> 
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="add-modal__content">
+                        <h4 class="add-modal__heading">Work:</h4>
+                        <textarea type="text" class="add-modal__input" rows="5"></textarea>
+                    </div>
+                    <div class="add-modal__button">
+                        <button class="modal-btn js-button-cancel">Cancel</button>
+                        <button type="submit" class="modal-btn js-button-submit">Submit</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <script src="./script/function.js"></script>
+    <script src="./script/add.js"></script>
 </body>
 </html>
 
