@@ -13,6 +13,10 @@ const addScreen = document.querySelector('.js-add-screen');
 const addModal = document.querySelector('.js-add-modal');
 
 function showTaskScreen() {
+    homeBtn.classList.remove('foot-btn-active');
+    taskBtn.classList.add('foot-btn-active');
+    chartBtn.classList.remove('foot-btn-active');
+    personBtn.classList.remove('foot-btn-active');
     personScreen.classList.remove('open');
     homeScreen.classList.add('hide');
     chartScreen.classList.remove('open');
@@ -20,6 +24,10 @@ function showTaskScreen() {
 }
 
 function showChartScreen() {
+    homeBtn.classList.remove('foot-btn-active');
+    taskBtn.classList.remove('foot-btn-active');
+    chartBtn.classList.add('foot-btn-active');
+    personBtn.classList.remove('foot-btn-active');
     taskScreen.classList.remove('open');
     personScreen.classList.remove('open');
     homeScreen.classList.add('hide');
@@ -27,6 +35,10 @@ function showChartScreen() {
 }
 
 function showPersonScreen() {
+    homeBtn.classList.remove('foot-btn-active');
+    taskBtn.classList.remove('foot-btn-active');
+    chartBtn.classList.remove('foot-btn-active');
+    personBtn.classList.add('foot-btn-active');
     taskScreen.classList.remove('open');
     homeScreen.classList.add('hide');
     chartScreen.classList.remove('open');
@@ -34,6 +46,10 @@ function showPersonScreen() {
 }
 
 function showHomeScreen() {
+    homeBtn.classList.add('foot-btn-active');
+    taskBtn.classList.remove('foot-btn-active');
+    chartBtn.classList.remove('foot-btn-active');
+    personBtn.classList.remove('foot-btn-active');
     taskScreen.classList.remove('open');
     personScreen.classList.remove('open');
     chartScreen.classList.remove('open');
@@ -59,29 +75,8 @@ addModal.addEventListener('click', function(event) {
 })
 
 // thêm tick khi đã hoàn thành công việc
+let workDones = document.getElementsByClassName('tasks-item');
 
-// var workDones = document.querySelector('.tasks-content');
-// const notDoneIcons = document.querySelectorAll('.js-empty-icon');
-// const tickDoneIcons = document.querySelectorAll('.js-done-icon');
-// function showTickDone (){
-//     workDone.classList.add('tasks-item__done')
-// }
-
-// function hideTickDone (){
-//     workDone.classList.remove('tasks-item__done')
-// }
-
-// workDones.addEventListener('click', function(event) {
-//     if (event.target.tagName === 'tasks-item') {
-//         event.target.classList.toogle('tasks-item__done');
-//     }
-// }, false)
-
-// for(const notDone of notDoneIcons) {
-//     notDone.addEventListener('click', showTickDone)
-// }
-
-// for (const tickDone of tickDoneIcons) {
-//     tickDone.addEventListener('click',hideTickDone)
-// }
-
+function checkTask(index) {
+    workDones[index].classList.toggle('tasks-item__done');
+}

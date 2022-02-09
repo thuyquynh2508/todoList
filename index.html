@@ -7,7 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <!-- <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="mobile-screen">
@@ -16,7 +17,7 @@
             <div id="home-header">
                 <div class="header-nav">
                     <button class="btn header-btn"><i class="fas fa-calendar-alt nav-icon header-icon"></i></button>
-                    <p class="date-text">Tuesday, 24 November</p>
+                    <p class="date-text"></p>
                     <button class="btn header-btn"><i class="fas fa-search nav-icon header-icon"></i></a></li>
                     <button class="btn header-btn notification-btn"><i class="far fa-bell nav-icon header-icon"></i></a></li>
                 </div>
@@ -208,18 +209,41 @@
         <div id="task" class="main js-task">
             <h2 class="title-heading">Tasks</h2>
             <div class="calendar-week pd-section">
-                <button class="day-btn">Mon<br>24</button>
-                <button class="day-btn">Tue<br>25</button>
-                <button class="day-btn">Wed<br>26</button>
-                <button class="day-btn">Thu<br>27</button>
-                <button class="day-btn">Fri<br>28</button>
-                <button class="day-btn">Sat<br>29</button>
-                <button class="day-btn">Sun<br>30</button>
+                <button class="day-btn">
+                    <p class="day-of-week">Mon</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Tue</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Wed</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Thu</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Fri</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Sat</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                <button class="day-btn">
+                    <p class="day-of-week">Sun</p> 
+                    <p class="day-date">24</p> 
+                </button>
+                
             </div>
-            <ul class="work-list">
-                <!-- javascript cung cấp dữ liệu -->
-            </ul>
-            
+            <div class="task-body">
+                <ul class="work-list">
+                    <!-- javascript cung cấp dữ liệu -->
+                </ul>
+            </div>
         </div>
         <!-- FOOTER -->
         <div id="footer">
