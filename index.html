@@ -237,14 +237,19 @@
                     <p class="day-of-week">Sun</p> 
                     <p class="day-date">24</p> 
                 </button>
-                
             </div>
+            <div class="clear-btn-wrap">
+                <button class="clear-all-btn modal-btn "><i class="fa-solid fa-eraser"></i>Clear All</button>
+            </div>
+            
             <div class="task-body">
                 <ul class="work-list">
                     <!-- javascript cung cấp dữ liệu -->
                 </ul>
             </div>
         </div>
+
+
         <!-- FOOTER -->
         <div id="footer">
             <div class="foot-nav js-footer">
@@ -263,57 +268,122 @@
     <div class="footer-add js-add-screen">
         <div class="add-modal js-add-modal">
             <header class="add-modal__header">
-                <h2>Add a Task</h2>
+                <h2 class="header-add">Add a Task</h2>
+                <h2 class="header-edit">Edit a Task</h2>
             </header>
-                <form class="add-modal__body"method="post" action="#">
-                    <div class="add-modal__time" >
-                        <div class="add-modal__time-date">
-                            <h4 class="add-modal__heading">Date:</h4>
-                            <input class="add-modal__time-input js-input-date" type="date" name="dateChoose">
-                            <button class="add-modal__time-btn"><i class="nav-icon far fa-calendar-alt"></i></button>
+            <form class="add-modal__body" method="post" action="#">
+                <div class="add-modal__time" >
+                    <div class="add-modal__time-date">
+                        <h4 class="add-modal__heading">Date:</h4>
+                        <input class="add-modal__time-input js-input-date" type="date" name="dateChoose">
+                        <button class="add-modal__time-btn"><i class="nav-icon far fa-calendar-alt"></i></button>
+                    </div>
+                    <div class="add-modal__time-hour">
+                        <h4 class="add-modal__heading">Time</h4>
+                        <div class="add-modal__time-hour-section">
+                            Begin:
+                            <input class="add-modal__time-input js-time-begin" type="time" name="timeFrom">
+                            <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
                         </div>
-                        <div class="add-modal__time-hour">
-                            <h4 class="add-modal__heading">Time</h4>
-                            <div class="add-modal__time-hour-section">
-                                Begin:
-                                <input class="add-modal__time-input js-time-begin" type="time" name="timeFrom">
-                                <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
-                            </div>
-                            <div class="add-modal__time-hour-section">  
-                                Finish:
-                                <input class="add-modal__time-input js-time-finish" type="time" name="timeTo">
-                                <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
-                            </div>
+                        <div class="add-modal__time-hour-section">  
+                            Finish:
+                            <input class="add-modal__time-input js-time-finish" type="time" name="timeTo">
+                            <button class="add-modal__time-btn"><i class="nav-icon far fa-clock"></i></button>
                         </div>
                     </div>
-                    <div class="add-modal__priority">
-                        <h4 class="add-modal__heading">Priority</h4>
-                        <ul class="add-modal__priority-list">
-                            <li>
-                                <input name="priorityWork" type="radio" value="Low"> 
-                                <span class="add-modal__priority-item">Low</span> 
-                            </li>
-                            <li>
-                                <input name="priorityWork" type="radio" value="Medium"> 
-                                <span class="add-modal__priority-item">Medium</span> 
-                            </li>
-                            <li>
-                                <input name="priorityWork" type="radio" value="High">
-                                <span class="add-modal__priority-item">High</span> 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="add-modal__content">
-                        <h4 class="add-modal__heading">Work:</h4>
-                        <textarea type="text" class="add-modal__input" rows="5"></textarea>
-                    </div>
-                    <div class="add-modal__button">
-                        <button class="modal-btn js-button-cancel">Cancel</button>
-                        <button type="submit" class="modal-btn js-button-submit">Submit</button>
-                    </div>
-                </form>
+                </div>
+                <div class="add-modal__priority">
+                    <h4 class="add-modal__heading">Priority</h4>
+                    <select name="prioritySelect" class="add-modal__priority-select add-modal__time-input">
+                        <option value="Low">Low priority</option>
+                        <option value="Medium">Medium priority</option>
+                        <option value="High">High priority</option>
+                    </select>
+                </div>
+                <div class="add-modal__content">
+                    <h4 class="add-modal__heading">Work:</h4>
+                    <textarea type="text" class="add-modal__input" rows="5"></textarea>
+                </div>
+                <div class="add-modal__button">
+                    <button class="modal-btn js-button-cancel">Cancel</button>
+                    <button type="submit" class="modal-btn js-button-submit">
+                        <p class="label-add">Add</p> 
+                        <p class="label-edit">Edit</p>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
+
+    <div class="dialog-container">
+        <div class="dialog-wrapper">
+            <header class="dialog-header">Confirm</header>
+            <div class="dialog-body">
+                <p class="dialog-message dialog-message__delete">This task will be deleted. Do you want to continue?</p>
+                <p class="dialog-message dialog-message__clear-all">All tasks will be deleted. Do you want to continue?</p>
+                <div class="add-modal__button">
+                    <button class="modal-btn dialog-btn__yes">Yes</button>
+                    <button class="modal-btn dialog-btn__no">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-status-container">
+        <div class="task-btn-status">
+            <header class="dialog-header">Status</header>
+            <div class="task-status-body">
+                <p class="task-status-text">Update the status of the work</p>
+                <!-- <div class="task-btn-wrapper">
+                    <div class="task-btn-status-complete">
+                        <i class="far fa-circle task-empty-icon"></i>
+                        <i class="fas fa-check-circle task-tick-icon tick-complete"></i>
+                    </div>
+                    <p class="task-label-btn complete-label-btn">Complete</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <div class="task-btn-status-ongoing">
+                        <i class="far fa-circle task-empty-icon"></i>
+                        <i class="far fa-chart-bar task-tick-icon tick-ongoing"></i>
+                    </div>
+                    <p class="task-label-btn ongoing-label-btn">On going</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <div class="task-btn-status-pending">
+                        <i class="far fa-circle task-empty-icon"></i>
+                        <i class="far fa-clock task-tick-icon tick-pending"></i>
+                    </div>
+                    <p class="task-label-btn pending-label-btn">Pending</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <div class="task-btn-status-cancel">
+                        <i class="far fa-circle task-empty-icon"></i>
+                        <i class="fas fa-times-circle task-tick-icon tick-cancel"></i>
+                    </div>
+                    <p class="task-label-btn cancel-label-btn">Cancel</p>
+                </div> -->
+                <div class="task-btn-wrapper">
+                    <input class="status-form" type="checkbox" name="statusContent" onclick="onlyOne(this)" value="Complete">
+                    <p class="task-label-btn complete-label-btn">Complete</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <input class="status-form" type="checkbox" name="statusContent" onclick="onlyOne(this)" value="On going">
+                    <p class="task-label-btn ongoing-label-btn">On going</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <input class="status-form" type="checkbox" name="statusContent" onclick="onlyOne(this)" value="Pending">
+                    <p class="task-label-btn pending-label-btn">Pending</p>
+                </div>
+                <div class="task-btn-wrapper">
+                    <input class="status-form" type="checkbox" name="statusContent" onclick="onlyOne(this)" value="Cancel">
+                    <p class="task-label-btn cancel-label-btn">Cancel</p>
+                </div>
+                <button class="modal-btn task-status-done">Done</button>
+            </div>
+        </div>
+    </div>
+    
+    
     <script src="./script/function.js"></script>
     <script src="./script/add.js"></script>
 </body>

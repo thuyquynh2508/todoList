@@ -1,5 +1,6 @@
 :root {
     --primary-color: #5F8DA5;
+    --background-color: #e1e7f1;
     --note-text-color:rgb(158, 158, 158);
     --red-color: #ff0000;
     --blue-color: #4382ca;
@@ -49,6 +50,7 @@ html {
     border-radius: var(--border-radius);
 }
 
+
 @keyframes increase {
     from {
         opacity: 0;
@@ -74,7 +76,7 @@ html {
 
 @keyframes slideIn {
     0% {
-        transform: translateX(300px) scale(.2);
+        transform: translateX(0px) scale(.2);
     }
     100% {
         transform: translateX(0px) scale(1);
@@ -83,7 +85,7 @@ html {
 
 @keyframes slideDown {
     0% {
-      transform: translateY(-200px);
+      transform: translateY(-500px);
     }
     100% {
       transform: translateY(0px);
@@ -92,12 +94,22 @@ html {
 
 @keyframes slideUp {
     0% {
-      transform: translateY(200px);
+        transform: translateY(500px);
     }
     100% {
-      transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
+
+@keyframes slideDisappear {
+    100% {
+        transform: translateY(0px);
+    }
+    0% {
+        transform: translateY(500px);
+    }
+}
+
 
 @keyframes slideDiagonal {
     0% {
@@ -107,3 +119,4 @@ html {
         transform: translateX(0px) translateY(0px);
     }
 }
+

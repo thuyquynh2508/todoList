@@ -3,7 +3,6 @@ const chartBtn = document.querySelector('.js-chart-btn');
 const homeBtn = document.querySelector('.js-home-btn');
 const personBtn = document.querySelector('.js-person-btn');
 const addBtn = document.querySelector('.js-add-btn');
-const cancelBtn = document.querySelector('.js-button-cancel');
 
 const taskScreen = document.querySelector('.js-task');
 const chartScreen = document.querySelector('.js-chart');
@@ -57,6 +56,8 @@ function showHomeScreen() {
 }
 
 function showAddScreen (){
+    headerModal.classList.remove('add-modal__header-edit');
+    submitButton.classList.remove('label-submit-edit');
     addScreen.classList.add('open');
 }
 
@@ -68,11 +69,23 @@ chartBtn.addEventListener('click',showChartScreen)
 homeBtn.addEventListener('click', showHomeScreen)
 personBtn.addEventListener('click', showPersonScreen)
 addBtn.addEventListener('click', showAddScreen)
-cancelBtn.addEventListener('click', hideAddScreen)
 addScreen.addEventListener('click', hideAddScreen)
 addModal.addEventListener('click', function(event) {
     event.stopPropagation()
 })
+
+
+//ngày tháng năm ở trang home
+function showDateToday() {
+    let str = Date();
+    //Wed Feb 09 2022 08:16:12 GMT+0700 (Indochina Time)
+    let array_time = str.split(" ");
+    let year = array_time[3];
+    let month = array_time[1];
+    let day = array_time[2];
+    let dayofweek = array_time[0];
+    todayLine.innerHTML = `${dayofweek}, ${day} ${month} ${year}`
+}
 
 // thêm tick khi đã hoàn thành công việc
 let workDones = document.getElementsByClassName('tasks-item');

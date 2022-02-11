@@ -117,6 +117,7 @@
 .task-item__icon {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .tasks-item__done {
     position: relative;
@@ -215,11 +216,6 @@ i.task-done-icon {
     margin: auto;
     background-color: #EFF2F9;
 }
-
-/* .foot-btn:hover, 
-.foot-btn-active .foot-icon {
-    border-bottom: 6px solid var(--blue-color);
-} */
 
 .foot-btn:hover .foot-icon,
 .foot-btn-active .foot-icon {
@@ -458,8 +454,19 @@ i.task-done-icon {
     margin-left: 10px;
 }
 
+.clear-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+button.clear-all-btn {
+    width: fit-content;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+button.clear-all-btn i {
+    padding-right: 5px;
+}
 .work-list {
-    margin: 15px 0px;
     position: relative;
 }
 .work-time-section {
@@ -560,6 +567,8 @@ button.function-icon {
     display: none;
 }
 
+
+
 .work:hover {
     position: absolute;
     width: 100%;
@@ -580,6 +589,93 @@ button.function-icon {
 .work:hover .work-name {
     height: 55.5px;
 }
+
+/* status dialog */
+.task-status-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.task-status-container.open {
+    display: flex;
+}
+
+.task-btn-status {
+    position: relative;
+    background-color: var(--background-color);
+    transform: translateY(-2px);
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.task-status-body {
+    padding: 15px;
+}
+
+.task-btn-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+}
+
+.task-status-text {
+    padding-bottom: 5px;
+}
+.task-label-btn {
+    font-size: 17px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.task-empty-icon {
+    color: var(--primary-color); 
+    font-size: 30px;
+}
+
+i.task-tick-icon {
+    font-size: 30px;
+    display: none;
+}
+
+.tick-complete, .complete-label-btn {
+    color: var(--green-color);
+}
+
+.tick-ongoing, .ongoing-label-btn {
+    color: var(--blue-color);
+}
+
+.tick-pending, .pending-label-btn {
+    color: var(--orange-color);
+}
+
+.tick-cancel, .cancel-label-btn {
+    color: var(--red-color);
+}
+
+.task-tick .task-empty-icon {
+    display: none;
+}
+
+.task-tick .task-tick-icon {
+    display: block;
+}
+
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    border-color: var(--primary-color);
+}
+
 /* ADD SCREEN */
 .footer-add {
     position: fixed;
@@ -602,6 +698,7 @@ button.function-icon {
     background: var(--white-color);
     width: 100%;
     position: relative;
+    animation: slideUp ease 0.8s;
 }
 
 .add-modal__header {
@@ -611,6 +708,16 @@ button.function-icon {
     align-items: center;
     justify-content: center;
     color: var(--white-color);
+}
+.header-edit {
+    display: none;
+}
+.add-modal__header-edit .header-edit {
+    display: block;
+}
+
+.add-modal__header-edit .header-add {
+    display: none;
 }
 .add-modal__body {
     padding: 20px;
@@ -654,22 +761,15 @@ button.function-icon {
     border: 2px solid var(--primary-color);
     width: fit-content;
     padding: 2px 8px;
+    background-color: var(--white-color)
 }
 
 .js-time-begin {
     margin: 0px 10px;
 }
 
-.add-modal__priority-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-.add-modal__priority-item {
-    padding-left: 5px;
-    color: var(--primary-color);
-    font-weight: 500;
+.add-modal__priority-select {
+    font-size: 16px;
 }
 
 .add-modal__input {
@@ -686,12 +786,84 @@ button.function-icon {
 }
 
 .js-button-submit {
-    opacity: 0.6;
+    /* opacity: 0.6;
     pointer-events: none;
-    cursor: default;
-}
-
-.js-button-submit.active {
+    cursor: default; */
     opacity: 1;
     pointer-events: auto;
 }
+
+.js-button-submit.active {
+    /* opacity: 1;
+    pointer-events: auto; */
+}
+.label-edit {
+    display: none;
+}
+.label-submit-edit .label-edit {
+    display: block;
+}
+
+.label-submit-edit .label-add {
+    display: none;
+}
+
+.dialog-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.dialog-container.open {
+    display: flex;
+}
+
+.dialog-wrapper {
+    background: var(--white-color);
+    width: 80%;
+    position: relative;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    animation: slideIn ease 0.8s;
+}
+.dialog-body {
+    padding: 15px;
+}
+
+.dialog-message {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.dialog-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    padding: 10px 0px;
+    text-align: center;
+    font-size: 20px;
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
+}
+.dialog-message__clear-all {
+    display: none;
+}
+
+.dialog-clear-all .dialog-message__clear-all {
+    display: block;
+}
+
+.dialog-clear-all .dialog-message__delete {
+    display: none;
+}
+
