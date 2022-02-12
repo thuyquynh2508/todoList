@@ -7,7 +7,7 @@
     width: 100%;
     margin: auto;
     background-color: #e1e7f1;
-    height: 1500px;
+    height: 2000px;
 }
 
 /* header */
@@ -518,6 +518,10 @@ button.clear-all-btn i {
 
 .work-content {
     flex: 1;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .work-priority {
@@ -531,16 +535,17 @@ button.clear-all-btn i {
 }
 
 .work-name {
-    text-overflow: ellipsis;
+    vertical-align: middle;
     font-size: 16px;
     line-height: 18.5px;
-    height: 37px;
+    max-height: 37px;
     overflow: hidden;
     display: block;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    
+    word-break: break-word;
+
 }
 
 .work-status {
@@ -551,7 +556,7 @@ button.clear-all-btn i {
 }
 
 .work-time {
-    font-size: 12px;
+    font-size: 13px;
     display: none;
 }
 .function-list {
@@ -566,8 +571,6 @@ button.function-icon {
     font-size: 20px;
     display: none;
 }
-
-
 
 .work:hover {
     position: absolute;
@@ -587,7 +590,8 @@ button.function-icon {
     margin: 0;
 }
 .work:hover .work-name {
-    height: 55.5px;
+    max-height: 55.5px;
+    -webkit-line-clamp: 3;
 }
 
 /* status dialog */
@@ -786,17 +790,10 @@ input[type=checkbox] {
 }
 
 .js-button-submit {
-    /* opacity: 0.6;
-    pointer-events: none;
-    cursor: default; */
     opacity: 1;
     pointer-events: auto;
 }
 
-.js-button-submit.active {
-    /* opacity: 1;
-    pointer-events: auto; */
-}
 .label-edit {
     display: none;
 }
@@ -842,7 +839,7 @@ input[type=checkbox] {
     color: var(--primary-color);
     font-weight: 600;
     font-size: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 
 .dialog-header {
@@ -867,3 +864,30 @@ input[type=checkbox] {
     display: none;
 }
 
+.notification-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.notification-container .open {
+    display: flex;
+}
+
+.notifi-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button.notifi-btn {
+    width: 100%;
+}

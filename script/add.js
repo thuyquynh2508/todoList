@@ -29,25 +29,14 @@ const statusPending = document.getElementsByClassName('task-btn-status-pending')
 const statusCancelBtn = document.querySelector('.task-btn-status-cancel');
 const statusCancel = document.getElementsByClassName('task-btn-status-cancel');
 const doneStatusBtn = document.querySelector('.task-status-done');
+
+const notifiModal = document.querySelector('.notification-container');
 showTasks()
 showDateToday()
-
-// inputWork.onkeyup = () => {
-//     // Lấy phần text người dùng đã nhập
-//     let userText = inputWork.value;
-
-//     if (userText.trim() != 0) {  //nếu phần input có ký tự -> submit hoạt động
-//         submitButton.classList.add('active');
-//     }
-//     else { //nếu không có ký tự thì vẫn không hoạt động
-//         submitButton.classList.remove('active');
-//     }
-// }
 
 //nếu người dùng click vào submit
 submitButton.addEventListener('click', function(e) {
     e.preventDefault();
-
     let getNewTodoLocalStorage = localStorage.getItem('New todo:');
     if (getNewTodoLocalStorage == null) { //nếu localStorage trống (chưa có công việc nào)
         todoArr = []; //tạo mảng mới
@@ -68,7 +57,28 @@ submitButton.addEventListener('click', function(e) {
         let timeBegin = inputBegin.value;
         let timeFinish = inputFinish.value;
         let priority = inputPriority.value;
-        let status = 'On going';
+        let status = '';
+
+        let timeNow = showTimeNow();
+        let timeNowAll = timeNow.split(":");
+        let hourNow = timeNowAll[0];
+        let minuteNow = timeNowAll[1];
+        let timeBeginAll = timeBegin.split(":");
+        let hourBegin = timeBeginAll[0];
+        let minuteBegin = timeBeginAll[1];
+        let timeFinishAll = timeFinish.split(":");
+        let hourFinish = timeFinishAll[0];
+        let minuteFinish = timeFinishAll[1];
+        
+        let beginTime = parseInt(hourBegin) * 60 + parseInt(minuteBegin);
+        let nowTime = parseInt(hourNow) * 60 + parseInt(minuteNow);
+        let finishTime = parseInt(hourFinish) * 60 + parseInt(minuteFinish);
+        if ((nowTime > beginTime) && (finishTime > nowTime)) {
+            status = 'On going';
+        } else {
+            status = 'Pending';
+        }
+        
         todoArr.push({
             name: userText,
             date: dateWork,
@@ -196,6 +206,7 @@ function statusTask (index) {
     doneStatusBtn.setAttribute('index', index);
 }
 
+
 doneStatusBtn.addEventListener('click', function(ev) {
     ev.preventDefault();
     let getNewTodoLocalStorage = localStorage.getItem('New todo:');
@@ -205,10 +216,13 @@ doneStatusBtn.addEventListener('click', function(ev) {
         todoArr = JSON.parse(getNewTodoLocalStorage); //chuyển json string -> js object
     }
     let checkbox = document.querySelector('input[type="checkbox"]:checked');
-    console.log(checkbox.value);
     let statusIndex = this.getAttribute('index')
     if (statusIndex == 0 || statusIndex) {
         todoArr[statusIndex].sta = checkbox.value;
+        if ((checkbox.value).localeCompare("Complete") == 0) {
+            // console.log((checkbox.value).localeCompare("Complete") == 0);
+            // workDones[statusIndex].classList.add('tasks-item__done');
+        }
         this.removeAttribute('index');
     }
     localStorage.setItem('New todo:', JSON.stringify(todoArr));//chuyển js object -> json string
@@ -224,3 +238,4 @@ function onlyOne(checkbox) {
         }  
     })
 }
+

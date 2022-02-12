@@ -87,6 +87,12 @@ function showDateToday() {
     todayLine.innerHTML = `${dayofweek}, ${day} ${month} ${year}`
 }
 
+function showTimeNow() {
+    let str = Date();
+    let array_time = str.split(" ");
+    let timeAll = array_time[4];
+    return timeAll;
+}
 // thêm tick khi đã hoàn thành công việc
 let workDones = document.getElementsByClassName('tasks-item');
 
