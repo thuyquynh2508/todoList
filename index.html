@@ -7,261 +7,324 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <!-- <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="mobile-screen">
-        <!-- HOME -->
-        <div id="home" class="main js-home">
-            <div id="home-header">
-                <div class="header-nav">
-                    <button class="btn header-btn"><i class="fas fa-calendar-alt nav-icon header-icon"></i></button>
-                    <p class="date-text"></p>
-                    <button class="btn header-btn"><i class="fas fa-search nav-icon header-icon"></i></a></li>
-                    <button class="btn header-btn notification-btn"><i class="far fa-bell nav-icon header-icon"></i></a></li>
-                </div>
-            </div>
-            <div id="home-content">
-                <!-- STATISTIC -->
-                <div class="home-statistic pd-section">
-                    <div class="statistic-list">
-                        <div class="statistic-item statistic-completed">
-                            <a href="" class="statistic-block">
-                                <i class="far fa-check-square statistic-icon"></i>
-                                <div class="statistic-info">
-                                    <p class="statistic-number">12</p>
-                                    <p class="statistic-name">Completed</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="statistic-item statistic-pending">
-                            <a href="" class="statistic-block">
-                                <i class="far fa-clock statistic-icon"></i>
-                                <div class="statistic-info">
-                                    <p class="statistic-number">6</p>
-                                    <p class="statistic-name">Pending</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="statistic-list">
-                        <div class="statistic-item statistic-canceled">
-                            <a href="" class="statistic-block">
-                                <i class="far fa-window-close statistic-icon"></i>
-                                <div class="statistic-info">
-                                    <p class="statistic-number">4</p>
-                                    <p class="statistic-name">Canceled</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="statistic-item statistic-ongoing">
-                            <a href="" class="statistic-block">
-                                <i class="far fa-chart-bar statistic-icon"></i>
-                                <div class="statistic-info">
-                                    <p class="statistic-number">3</p>
-                                    <p class="statistic-name">Ongoing</p>
-                                </div>
-                            </a>
-                        </div>                        
-                    </div>
-                </div>
-
-                <!-- TASK HOME-->
-                <div class="home-task pd-section">
-                    <div class="tasks-bar">
-                        <h2 class="title-heading">Tasks</h2>
-                        <a href="" class="tasks-view-all-btn">View All</a>
-                    </div>
-                    <ul class="tasks-content">
-                        <!-- Xử lý bởi JavaScript -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <!-- CHART -->
-        <div id="chart" class="main js-chart">
-            <div class="chart-priority pd-section">
-                <div class="chart-header">
-                    <h2 class="title-heading">Priority</h2>
-                    <p class="chart-info">Tasks in a week</p>
-                </div>
-                <div class="chart-note">
-                    <div class="low-icon circle-icon"><p class="note-icon">Low</p></div>
-                    <div class="medium-icon circle-icon"><p class="note-icon">Medium</p></div>
-                    <div class="high-icon circle-icon"><p class="note-icon">High</p></div>
-                </div>
-                <div class="chart-content chart-layout">
-                    <div class="chart-label-col">
-                        <p>Tasks Perday</p>
-                        <div class="chart-number-5">
-                            <p class="chart-number">5</p>
-                            <div class="medium-icon circle-icon"></div>
-                        </div>
-                        <p class="chart-number">4</p>
-                        <p class="chart-number">3</p>
-                        <p class="chart-number">2</p>
-                        <p class="chart-number">1</p>
-                        <p class="chart-number">0</p>
-                    </div>   
-                    <div class="chart-date-section">
-                        <p class="chart-date">Mon</p>                    
-                        <p class="chart-date">Tue</p>
-                        <p class="chart-date">Wed</p>
-                        <p class="chart-date">Thu</p>
-                        <p class="chart-date">Fri</p>
-                        <p class="chart-date">Sat</p>
-                        <p class="chart-date">Sun</p>
-                    </div>
-                </div>
-                            
-            </div>
-            <div class="chart-activity pd-section">
-                <div class="chart-header">
-                    <h2 class="title-heading">Activity</h2>
-                    <p class="chart-info">Tasks in a week</p>
-                </div>
-                <div class="chart-layout">      
-                    <div class="chart-item-section">
-                        <div class="chart-item" style="--percent: 60%"></div>
-                        <div class="chart-item" style="--percent: 50%"></div>
-                        <div class="chart-item" style="--percent: 70%"></div>
-                        <div class="chart-item" style="--percent: 80%"></div>
-                        <div class="chart-item" style="--percent: 60%"></div>
-                        <div class="chart-item" style="--percent: 40%"></div>
-                        <div class="chart-item" style="--percent: 30%"></div>
-                    </div>
-                    <div class="chart-date-section">
-                        <p class="chart-date">Mon</p>                    
-                        <p class="chart-date">Tue</p>
-                        <p class="chart-date">Wed</p>
-                        <p class="chart-date">Thu</p>
-                        <p class="chart-date">Fri</p>
-                        <p class="chart-date">Sat</p>
-                        <p class="chart-date">Sun</p>
-                    </div>
-                </div>
-            </div>           
-        </div>
-        <!-- PERSON -->
-        <div id="person" class="js-person">
-            <div class="person-info">
-                <div class="info-sign">
-                    <img src="./assets/img/myPhoto.png" alt="myPhoto" class="info-img">
-                    <div class="info-full">
-                        <h2 class="info-name">Quynh Nguyen</h2>
-                        <p>My Tracker</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="person-content main">
-                <p class="text-finish-percent">You finished <br> 65% of your task</p>
-                <div class="circle-percent">
-                    <canvas id="myCanvas" width="device-width" height="300"></canvas>
-                    <script>
-                        var canvas = document.getElementById('myCanvas');
-                        var contextBegin = canvas.getContext('2d');
-                        var contextFinish = canvas.getContext('2d');
-                        
-                        var x = canvas.width / 2;
-                        var y = canvas.height / 2;
-
-                        var radius = 140;
-                        
-                        var startAngleBegin = 0.7 * Math.PI;
-                        var startAngleFinish = 0.7 * Math.PI;
-                        
-                        var endAngleBegin = 2.3 * Math.PI;
-                        var endAngleFinish = 2.0 * Math.PI;
-                        
-                        var counterClockwise = false;
-                        
-                        contextBegin.beginPath();
-                        contextBegin.arc(x, y, radius, startAngleBegin, endAngleBegin, counterClockwise);
-                        contextBegin.lineWidth = 15;
-
-                        // line color
-                        contextBegin.strokeStyle = '#d4d7d8';
-                        contextBegin.stroke();
-
-                        // Vẽ đường cung
-                        contextFinish.beginPath();
-                        contextFinish.arc(x, y, radius, startAngleFinish, endAngleFinish, counterClockwise);
-                        contextFinish.lineWidth = 15;
-
-                        // line color
-                        contextFinish.strokeStyle = '#5F8DA5';
-                        contextFinish.stroke();
-                    </script>
-                    <div class="text-finish-number">
-                        <i class="fas fa-fire fire-icon"></i>
-                        <p class="finish-number">80</p>
-                        <p class="text-note">To do list</p>
-                    </div>
-                    
-                </div>
-                <button class="view-detail-btn">View Detail</button>
-            </div>
-        </div>
-        <!-- TASK -->
-        <div id="task" class="main js-task">
-            <h2 class="title-heading">Tasks</h2>
-            <div class="calendar-week pd-section">
-                <button class="day-btn">
-                    <p class="day-of-week">Mon</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Tue</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Wed</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Thu</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Fri</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Sat</p> 
-                    <p class="day-date">24</p> 
-                </button>
-                <button class="day-btn">
-                    <p class="day-of-week">Sun</p> 
-                    <p class="day-date">24</p> 
-                </button>
-            </div>
-            <div class="clear-btn-wrap">
-                <button class="clear-all-btn modal-btn "><i class="fa-solid fa-eraser"></i>Clear All</button>
-            </div>
-            
-            <div class="task-body">
-                <ul class="work-list">
-                    <!-- javascript cung cấp dữ liệu -->
-                </ul>
-            </div>
-        </div>
-
-
         <!-- FOOTER -->
         <div id="footer">
-            <div class="foot-nav js-footer">
-                <ul class="nav-list">
-                    <li><button class="btn foot-btn js-home-btn"><i class="fas fa-home nav-icon foot-icon"></i></button></li>
-                    <li><button class="btn foot-btn js-task-btn"><i class="fas fa-file-alt nav-icon foot-icon"></i></button></li>
-                </ul>
-                <button class="btn foot-btn add-btn js-add-btn"><i class="fas fa-plus-circle add-icon"></i></button>
-                <ul class="nav-list">
-                    <li><button class="btn foot-btn js-chart-btn"><i class="far fa-chart-bar nav-icon foot-icon"></i></button></li>
-                    <li><button class="btn foot-btn js-person-btn"><i class="fas fa-user-alt nav-icon foot-icon"></i></button></li>
-                </ul>
+            <div class="footer-wrap">
+                <div class="foot-nav js-footer">
+                    <ul class="nav-list">
+                        <li>
+                            <button class="btn foot-btn nav-btn js-home-btn">
+                            <i class="fas fa-home nav-icon foot-icon"></i>
+                            <p>Overview</p>
+                            </button>
+                        </li>
+                        <li><button class="btn foot-btn nav-btn js-task-btn"><i class="fas fa-file-alt nav-icon foot-icon"></i><p>Tasks</p></button></li>
+                    </ul>
+                    <ul class="nav-list">
+                        <li><button class="btn foot-btn nav-btn js-chart-btn"><i class="far fa-chart-bar nav-icon foot-icon"></i><p>Dashboard</p></button></li>
+                        <li><button class="btn foot-btn nav-btn js-setting-btn"><i class="fa-solid fa-gear nav-icon foot-icon"></i><p>Settings</p></button></li>
+                    </ul>
+                </div>
+                <!-- <button class="btn foot-btn add-btn js-add-btn"><i class="fas fa-plus-circle add-icon"></i></button> -->
+                <div class="add-wrap">
+                    <img class="add-img" src="./assets/img/note.png" alt="">
+                    <div class="add-content">
+                        <p class="add-note">You can add more task for your daily</p>
+                        <button class="btn foot-btn add-pc-btn add-btn js-add-btn">
+                            <i class="fas fa-plus-circle add-icon"></i> 
+                            <p class="add-text">Add task</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-wrap">
+            <div class="main-screen">
+                <!-- HOME -->
+                <div id="home" class="main js-home">
+                    <div id="home-header">
+                        <div class="header-nav">
+                            <button class="btn header-btn"><i class="fas fa-calendar-alt nav-icon header-icon"></i></button>
+                            <p class="date-text"></p>
+                            <button class="btn header-btn"><i class="fas fa-search nav-icon header-icon"></i></a></li>
+                            <button class="btn header-btn notification-btn"><i class="far fa-bell nav-icon header-icon"></i></a></li>
+                        </div>
+                    </div>
+                    <div id="home-content">
+                        <!-- STATISTIC -->
+                        <div class="home-statistic pd-section">
+                            <div class="statistic-list">
+                                <div class="statistic-item statistic-completed">
+                                    <a href="" class="statistic-block">
+                                        <i class="far fa-check-square statistic-icon"></i>
+                                        <div class="statistic-info">
+                                            <p class="statistic-number">12</p>
+                                            <p class="statistic-name">Completed</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="statistic-item statistic-pending">
+                                    <a href="" class="statistic-block">
+                                        <i class="far fa-clock statistic-icon"></i>
+                                        <div class="statistic-info">
+                                            <p class="statistic-number">6</p>
+                                            <p class="statistic-name">Pending</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="statistic-list">
+                                <div class="statistic-item statistic-canceled">
+                                    <a href="" class="statistic-block">
+                                        <i class="far fa-window-close statistic-icon"></i>
+                                        <div class="statistic-info">
+                                            <p class="statistic-number">4</p>
+                                            <p class="statistic-name">Canceled</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="statistic-item statistic-ongoing">
+                                    <a href="" class="statistic-block">
+                                        <i class="far fa-chart-bar statistic-icon"></i>
+                                        <div class="statistic-info">
+                                            <p class="statistic-number">3</p>
+                                            <p class="statistic-name">Ongoing</p>
+                                        </div>
+                                    </a>
+                                </div>                        
+                            </div>
+                        </div>
+        
+                        <!-- TASK HOME-->
+                        <div class="home-task pd-section">
+                            <div class="tasks-bar">
+                                <h2 class="title-heading">Tasks</h2>
+                                <a href="" class="tasks-view-all-btn">View All</a>
+                            </div>
+                            <ul class="tasks-content">
+                                <!-- Xử lý bởi JavaScript -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CHART -->
+                <div id="chart" class="main js-chart">
+                    <div class="chart-wrapper">
+                        <div class="chart-section">
+                            <div class="chart-header">
+                                <h2 class="title-heading">Priority</h2>
+                                <p class="chart-info">Tasks in a week</p>
+                            </div>
+                            <div class="chart-note">
+                                <div class="low-icon circle-icon"><p class="note-icon">Low</p></div>
+                                <div class="medium-icon circle-icon"><p class="note-icon">Medium</p></div>
+                                <div class="high-icon circle-icon"><p class="note-icon">High</p></div>
+                            </div>
+                            <div class="chart-content chart-layout">
+                                <div class="chart-label-col">
+                                    <p>Tasks Perday</p>
+                                    <div class="chart-number-5">
+                                        <p class="chart-number">5</p>
+                                        <div class="medium-icon circle-icon"></div>
+                                    </div>
+                                    <p class="chart-number">4</p>
+                                    <p class="chart-number">3</p>
+                                    <p class="chart-number">2</p>
+                                    <p class="chart-number">1</p>
+                                    <p class="chart-number">0</p>
+                                </div>   
+                                <div class="chart-date-section">
+                                    <p class="chart-date">Mon</p>                    
+                                    <p class="chart-date">Tue</p>
+                                    <p class="chart-date">Wed</p>
+                                    <p class="chart-date">Thu</p>
+                                    <p class="chart-date">Fri</p>
+                                    <p class="chart-date">Sat</p>
+                                    <p class="chart-date">Sun</p>
+                                </div>
+                            </div>
+                                        
+                        </div>
+                        <div class="chart-section">
+                            <div class="chart-header">
+                                <h2 class="title-heading">Activity</h2>
+                                <p class="chart-info">Tasks in a week</p>
+                            </div>
+                            <div class="chart-note">
+                                <p class="note-activity">Rate of tasks in this week </p>
+                            </div>
+                            <div class="chart-layout">      
+                                <div class="chart-item-section">
+                                    <div class="chart-item" style="--percent: 60%"></div>
+                                    <div class="chart-item" style="--percent: 50%"></div>
+                                    <div class="chart-item" style="--percent: 70%"></div>
+                                    <div class="chart-item" style="--percent: 80%"></div>
+                                    <div class="chart-item" style="--percent: 60%"></div>
+                                    <div class="chart-item" style="--percent: 40%"></div>
+                                    <div class="chart-item" style="--percent: 30%"></div>
+                                </div>
+                                <div class="chart-date-section">
+                                    <p class="chart-date">Mon</p>                    
+                                    <p class="chart-date">Tue</p>
+                                    <p class="chart-date">Wed</p>
+                                    <p class="chart-date">Thu</p>
+                                    <p class="chart-date">Fri</p>
+                                    <p class="chart-date">Sat</p>
+                                    <p class="chart-date">Sun</p>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                    </div>  
+                    <div class="chart-wrapper">
+                        <div class="chart-section">
+                            <div class="chart-header">
+                                <h2 class="title-heading">Process</h2>
+                            </div>
+                            <p class="text-finish-percent">You finished <br> 65% of your task</p>
+                            <canvas id="myCanvas" width="device-width" height="250"></canvas>
+                            <script>
+                                var canvas = document.getElementById('myCanvas');
+                                var contextBegin = canvas.getContext('2d');
+                                var contextFinish = canvas.getContext('2d');
+                                
+                                var x = canvas.width / 2;
+                                var y = canvas.height / 2;
+        
+                                var radius = 100;
+                                
+                                var startAngleBegin = 0.7 * Math.PI;
+                                var startAngleFinish = 0.7 * Math.PI;
+                                
+                                var endAngleBegin = 2.3 * Math.PI;
+                                var endAngleFinish = 2.0 * Math.PI;
+                                
+                                var counterClockwise = false;
+                                
+                                contextBegin.beginPath();
+                                contextBegin.arc(x, y, radius, startAngleBegin, endAngleBegin, counterClockwise);
+                                contextBegin.lineWidth = 15;
+        
+                                // line color
+                                contextBegin.strokeStyle = '#d4d7d8';
+                                contextBegin.stroke();
+        
+                                // Vẽ đường cung
+                                contextFinish.beginPath();
+                                contextFinish.arc(x, y, radius, startAngleFinish, endAngleFinish, counterClockwise);
+                                contextFinish.lineWidth = 15;
+        
+                                // line color
+                                contextFinish.strokeStyle = '#5F8DA5';
+                                contextFinish.stroke();
+                            </script>
+                            <div class="text-finish-number">
+                                <i class="fas fa-fire fire-icon"></i>
+                                <p class="finish-number">80</p>
+                                <p class="text-note">To do list</p>
+                            </div>
+                            
+                        </div>
+                        <div class="chart-section">
+                            <div class="chart-header">
+                                <h2 class="title-heading">Tags</h2>
+                            </div>
+                            <ul class="tag-content">
+                                <li class="tag-item"><a href="">#meeting</a></li>
+                                <li class="tag-item"><a href="">#housework</a></li>
+                                <li class="tag-item"><a href="">#project</a></li>
+                                <li class="tag-item"><a href="">#relax</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                    
+                </div>
+                <!-- SETTING -->
+                <div id="setting" class="main js-setting"> 
+                    <div class="setting-wrap">
+                        <div class="setting-nav">
+                            <h2 class="title-heading">Settings</h2>
+                            <ul class="setting-list">
+                                <li class="setting-item">
+                                    <a href="">
+                                        <i class="far fa-user-circle nav-icon"></i>
+                                        <p class="setting-item__text">Account</p> 
+                                    </a>
+                                </li>
+                                <li class="setting-item">
+                                    <a href="">
+                                        <i class="fas fa-cog nav-icon"></i>
+                                        <p class="setting-item__text">General</p> 
+                                    </a>
+                                </li>
+                                <li class="setting-item">
+                                    <a href="">
+                                        <i class="fas fa-palette nav-icon"></i>
+                                        <p class="setting-item__text">Theme</p> 
+                                    </a>
+                                </li>
+                                <li class="setting-item">
+                                    <a href="">
+                                        <i class="fas fa-stopwatch nav-icon"></i>
+                                        <p class="setting-item__text">Reminders</p> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="setting-content"> 
+                        </div>
+                    </div>
+                </div>
+                <!-- TASK -->
+                <div id="task" class="main js-task">
+                    <h2 class="title-heading">Tasks</h2>
+                    <div class="calendar-week pd-section">
+                        <button class="day-btn">
+                            <p class="day-of-week">Mon</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Tue</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Wed</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Thu</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Fri</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Sat</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                        <button class="day-btn">
+                            <p class="day-of-week">Sun</p> 
+                            <p class="day-date">24</p> 
+                        </button>
+                    </div>
+                    <div class="clear-btn-wrap">
+                        <button class="clear-all-btn modal-btn "><i class="fa-solid fa-eraser"></i>Clear All</button>
+                    </div>
+                    
+                    <div class="task-body">
+                        <ul class="work-list">
+                            <!-- javascript cung cấp dữ liệu -->
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

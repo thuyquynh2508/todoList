@@ -1,13 +1,13 @@
 const taskBtn = document.querySelector('.js-task-btn');
 const chartBtn = document.querySelector('.js-chart-btn');
 const homeBtn = document.querySelector('.js-home-btn');
-const personBtn = document.querySelector('.js-person-btn');
+const settingBtn = document.querySelector('.js-setting-btn');
 const addBtn = document.querySelector('.js-add-btn');
 
 const taskScreen = document.querySelector('.js-task');
 const chartScreen = document.querySelector('.js-chart');
 const homeScreen = document.querySelector('.js-home');
-const personScreen = document.querySelector('.js-person');
+const settingScreen = document.querySelector('.js-setting');
 const addScreen = document.querySelector('.js-add-screen');
 const addModal = document.querySelector('.js-add-modal');
 
@@ -15,8 +15,8 @@ function showTaskScreen() {
     homeBtn.classList.remove('foot-btn-active');
     taskBtn.classList.add('foot-btn-active');
     chartBtn.classList.remove('foot-btn-active');
-    personBtn.classList.remove('foot-btn-active');
-    personScreen.classList.remove('open');
+    settingBtn.classList.remove('foot-btn-active');
+    settingScreen.classList.remove('open');
     homeScreen.classList.add('hide');
     chartScreen.classList.remove('open');
     taskScreen.classList.add('open');
@@ -26,31 +26,31 @@ function showChartScreen() {
     homeBtn.classList.remove('foot-btn-active');
     taskBtn.classList.remove('foot-btn-active');
     chartBtn.classList.add('foot-btn-active');
-    personBtn.classList.remove('foot-btn-active');
+    settingBtn.classList.remove('foot-btn-active');
     taskScreen.classList.remove('open');
-    personScreen.classList.remove('open');
+    settingScreen.classList.remove('open');
     homeScreen.classList.add('hide');
     chartScreen.classList.add('open');
 }
 
-function showPersonScreen() {
+function showSettingScreen() {
     homeBtn.classList.remove('foot-btn-active');
     taskBtn.classList.remove('foot-btn-active');
     chartBtn.classList.remove('foot-btn-active');
-    personBtn.classList.add('foot-btn-active');
+    settingBtn.classList.add('foot-btn-active');
     taskScreen.classList.remove('open');
     homeScreen.classList.add('hide');
     chartScreen.classList.remove('open');
-    personScreen.classList.add('open');
+    settingScreen.classList.add('open');
 }
 
 function showHomeScreen() {
     homeBtn.classList.add('foot-btn-active');
     taskBtn.classList.remove('foot-btn-active');
     chartBtn.classList.remove('foot-btn-active');
-    personBtn.classList.remove('foot-btn-active');
+    settingBtn.classList.remove('foot-btn-active');
     taskScreen.classList.remove('open');
-    personScreen.classList.remove('open');
+    settingScreen.classList.remove('open');
     chartScreen.classList.remove('open');
     homeScreen.classList.remove('hide');
 }
@@ -67,7 +67,7 @@ function hideAddScreen() {
 taskBtn.addEventListener('click', showTaskScreen)
 chartBtn.addEventListener('click',showChartScreen)
 homeBtn.addEventListener('click', showHomeScreen)
-personBtn.addEventListener('click', showPersonScreen)
+settingBtn.addEventListener('click', showSettingScreen)
 addBtn.addEventListener('click', showAddScreen)
 addScreen.addEventListener('click', hideAddScreen)
 addModal.addEventListener('click', function(event) {
@@ -94,8 +94,19 @@ function showTimeNow() {
     return timeAll;
 }
 // thêm tick khi đã hoàn thành công việc
-let workDones = document.getElementsByClassName('tasks-item');
-
-function checkTask(index) {
-    workDones[index].classList.toggle('tasks-item__done');
-}
+// let workDones = document.getElementsByClassName('tasks-item');
+// let workDone = document.querySelector('.task-item');
+// function checkTask(index) {
+//     let getNewTodoLocalStorage = localStorage.getItem('New todo:');
+//     if (getNewTodoLocalStorage == null) { //nếu localStorage trống (chưa có công việc nào)
+//         todoArr = []; //tạo mảng mới
+//     } else {
+//         todoArr = JSON.parse(getNewTodoLocalStorage); //chuyển json string -> js object
+//     }
+//     if (todoArr[index].sta == "Complete") {
+//         workDone.classList.add('tasks-item__done');
+//     }
+//     else {
+//         workDones[index].classList.toggle('tasks-item__done');
+//     }
+// }
