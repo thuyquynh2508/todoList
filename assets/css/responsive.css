@@ -13,6 +13,7 @@
     .mobile-screen {
         display: flex;
         background-color: var(--primary-color);
+        min-height: 700px; 
     }
     /* FOOTER */
     .footer-wrap {
@@ -125,6 +126,7 @@
     .main-screen {
         width: 100%;
         padding-bottom: 100px;
+        min-height: 700px; 
     }
     
     /* footer */

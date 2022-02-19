@@ -68,7 +68,7 @@ submitButton.addEventListener("click", function (e) {
     let timeFinish = inputFinish.value;
     let priority = inputPriority.value;
     let status = "";
-
+    let timeNow = Date();
     if (
       transformTime(timeNow) > transformTime(timeBegin) &&
       transformTime(timeFinish) > transformTime(timeNow)
