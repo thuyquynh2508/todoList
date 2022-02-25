@@ -38,7 +38,7 @@ const doneStatusBtn = document.querySelector(".task-status-done");
 
 const notifiModal = document.querySelector(".notification-container");
 let workDones = document.getElementsByClassName("tasks-item");
-
+const scroll = document.querySelector(".scrollbar-home");
 showHomeScreen();
 showTasks();
 showDateToday();
@@ -135,7 +135,8 @@ function showTasks() {
             <i class="fas fa-caret-down more-icon"></i>
         </div>
     </li>`;
-    newInfoWork += `<li class="work-time-section pd-section">
+    newInfoWork += ` <div class="work-time-section-wrap">
+        <li class="work-time-section">
         <div class="time">
             <p>${todoArr[index].begin}<br><br><br><br><br>${todoArr[index].finish}</p> 
         </div>
@@ -152,11 +153,13 @@ function showTasks() {
                 <button onclick="deleteTask(${index})" class="function-icon btn function-list__delete"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
-    </li>`;
+    </li>
+    </div>`;
   });
   taskList.innerHTML = newTaskItem; //thêm thẻ li mới vào thẻ ul
   infoWorkList.innerHTML = newInfoWork;
   resetForm();
+  showScroll(todoArr);
 }
 
 function deleteTask(index) {
@@ -248,5 +251,15 @@ function checkTask(index) {
     workDones[index].classList.add("tasks-item__done");
   } else {
     workDones[index].classList.toggle("tasks-item__done");
+  }
+}
+
+
+function showScroll(todoArr) {
+  if (todoArr.length <= 4) {
+    scroll.classList.add("scroll-none");
+  }
+  else {
+    scroll.classList.remove("scroll-none");
   }
 }

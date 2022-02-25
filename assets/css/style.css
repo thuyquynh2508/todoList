@@ -7,9 +7,7 @@
     width: 100%;
     margin: 0;
     background-color: #e1e7f1;
-    /* height: 2000px; */
 }
-
 
 /* header */
 .header-btn {
@@ -93,6 +91,8 @@
 
 /* tasks */
 .home-task {
+    height: 320px;
+    padding-top: 25px;
     animation: slideDiagonal ease-in 0.4s forwards;
 }
 .tasks-bar {
@@ -107,6 +107,34 @@
     font-weight: 600;
 }
 
+.scrollbar-home {
+    width: 100%;
+	float: left;
+	height: 222px;
+	overflow-y: scroll;
+}
+.scrollbar-home::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(95, 141, 165, 0.4);
+    border-radius: var(--border-radius);
+	border: 1px solid rgb(95, 141, 165, 0.5);
+	background-color: #F5F5F5;
+}
+
+.scrollbar-home::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+.scrollbar-home::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background-color: var(--primary-color);	
+    height: 50px;
+}
+.scroll-none::-webkit-scrollbar {
+    display: none;
+}
 .tasks-item {
     color: var(--primary-color);
     list-style: none;
@@ -344,7 +372,7 @@ i.task-done-icon {
     text-decoration: none;
 }
 
-/* person */
+/* setting */
 #setting {
     display: none;
 }
@@ -411,6 +439,27 @@ i.task-done-icon {
     animation: slideDown ease-in 0.4s forwards;
 }
 
+.calendar-week::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(95, 141, 165, 0.4);
+    border-radius: var(--border-radius);
+	border: 1px solid rgb(95, 141, 165, 0.5);
+	background-color: #F5F5F5;
+}
+
+.calendar-week::-webkit-scrollbar
+{
+    
+	height: 5px;
+	background-color: #F5F5F5;
+}
+.calendar-week::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background-color: var(--primary-color);	
+}
+
+
 .day-btn {
     text-transform: uppercase;
     border: none;
@@ -439,18 +488,48 @@ i.task-done-icon {
 button.clear-all-btn {
     width: fit-content;
     padding: 5px 10px;
-    margin-top: 10px;
+    margin: 10px 0px;
 }
 button.clear-all-btn i {
     padding-right: 5px;
 }
+
+.task-body-wrapper {
+    width: 100%;
+	float: left;
+	height: 420px;
+	overflow-y: scroll;
+}
+
+.task-body-wrapper::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgb(95, 141, 165, 0.4);
+    border-radius: var(--border-radius);
+	border: 1px solid rgb(95, 141, 165, 0.5);
+	background-color: #F5F5F5;
+}
+
+.task-body-wrapper::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+.task-body-wrapper::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background-color: var(--primary-color);	
+}
+
 .work-list {
+}
+.work-time-section-wrap {
     position: relative;
 }
 .work-time-section {
     display: flex;
     flex-flow: row;
     height: 160px;
+    padding: 20px 0px;
 }
 
 .work-time-section::before {

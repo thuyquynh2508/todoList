@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #5F8DA5;
+    --primary-color: #5f8da5;
     --background-color: #e1e7f1;
     --note-text-color:rgb(158, 158, 158);
     --red-color: #ff0000;
@@ -16,7 +16,8 @@ html {
 }
 
 .main {
-    padding: 40px;
+    min-height: 680px;
+    padding: 25px 40px;
 }
 
 .pd-section {

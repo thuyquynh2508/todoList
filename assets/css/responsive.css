@@ -1,5 +1,9 @@
 /* PC */
 @media (min-width: 1024px) {
+    body {
+        background-color: var(--primary-color);
+        height: 100%;
+    }
     .main-wrap {
         width: calc(77% - 20px);
         margin: 20px 20px 20px auto;
@@ -13,7 +17,7 @@
     .mobile-screen {
         display: flex;
         background-color: var(--primary-color);
-        min-height: 700px; 
+        height: 100%;
     }
     /* FOOTER */
     .footer-wrap {
@@ -21,7 +25,6 @@
         background-color: var(--primary-color);
         position: fixed;
         top: 100px;
-        bottom: 50px;
     }
     .foot-nav {
         padding-left: 40px;
@@ -220,7 +223,14 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-
+    .task-body-wrapper::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+    .scrollbar-home::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
 }
 
 /* Mobile */
@@ -246,5 +256,11 @@
     .setting-item {
         border: 1px solid var(--note-text-color);
         margin: 10px 0px;
+    }
+    .task-body-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-home::-webkit-scrollbar {
+        display: none;
     }
 }
