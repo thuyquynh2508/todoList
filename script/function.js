@@ -93,20 +93,3 @@ function showTimeNow() {
     let timeAll = array_time[4];
     return timeAll;
 }
-// thêm tick khi đã hoàn thành công việc
-// let workDones = document.getElementsByClassName('tasks-item');
-// let workDone = document.querySelector('.task-item');
-// function checkTask(index) {
-//     let getNewTodoLocalStorage = localStorage.getItem('New todo:');
-//     if (getNewTodoLocalStorage == null) { //nếu localStorage trống (chưa có công việc nào)
-//         todoArr = []; //tạo mảng mới
-//     } else {
-//         todoArr = JSON.parse(getNewTodoLocalStorage); //chuyển json string -> js object
-//     }
-//     if (todoArr[index].sta == "Complete") {
-//         workDone.classList.add('tasks-item__done');
-//     }
-//     else {
-//         workDones[index].classList.toggle('tasks-item__done');
-//     }
-// }

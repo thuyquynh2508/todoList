@@ -38,7 +38,10 @@ const doneStatusBtn = document.querySelector(".task-status-done");
 
 const notifiModal = document.querySelector(".notification-container");
 let workDones = document.getElementsByClassName("tasks-item");
-const scroll = document.querySelector(".scrollbar-home");
+const scrollHome = document.querySelector(".scrollbar-home");
+const scrollTask = document.querySelector(".task-body-wrapper");
+
+const countHome = document.querySelector(".home-statistic");
 showHomeScreen();
 showTasks();
 showDateToday();
@@ -123,9 +126,11 @@ function showTasks() {
   }
   let newTaskItem = "";
   let newInfoWork = "";
+  
   todoArr.forEach((element, index) => {
+    
     newTaskItem += `<li class="tasks-item">
-        <div onclick="checkTask(${index})" class="task-item__icon">
+        <div onclick="checkTask(${index})" id='1' class="task-item__icon">
             <i class="far fa-circle task-circle-icon"></i>
             <i class="fas fa-check-circle task-done-icon"></i>
         </div>
@@ -156,8 +161,58 @@ function showTasks() {
     </li>
     </div>`;
   });
+
   taskList.innerHTML = newTaskItem; //thêm thẻ li mới vào thẻ ul
+  var countText = ['Complete','Pending','Canceled', 'On going'];
+  var countNumber = [0,0,0,0];
   infoWorkList.innerHTML = newInfoWork;
+  for (var workTodo of todoArr) {
+    for (var i = 0; i < 4; i++) {
+      if (workTodo.sta == countText[i]) {
+        countNumber[i] = countNumber[i] + 1;
+      }
+    }
+  }
+  countHome.innerHTML = `<div class="statistic-list">
+  <div class="statistic-item statistic-completed">
+      <a href="" class="statistic-block">
+          <i class="far fa-check-square statistic-icon"></i>
+          <div class="statistic-info">
+              <p class="statistic-number">${countNumber[0]}</p>
+              <p class="statistic-name">Completed</p>
+          </div>
+      </a>
+  </div>
+  <div class="statistic-item statistic-pending">
+      <a href="" class="statistic-block">
+          <i class="far fa-clock statistic-icon"></i>
+          <div class="statistic-info">
+              <p class="statistic-number">${countNumber[1]}</p>
+              <p class="statistic-name">Pending</p>
+          </div>
+      </a>
+  </div>
+</div>
+<div class="statistic-list">
+  <div class="statistic-item statistic-canceled">
+      <a href="" class="statistic-block">
+          <i class="far fa-window-close statistic-icon"></i>
+          <div class="statistic-info">
+              <p class="statistic-number">${countNumber[2]}</p>
+              <p class="statistic-name">Canceled</p>
+          </div>
+      </a>
+  </div>
+  <div class="statistic-item statistic-ongoing">
+      <a href="" class="statistic-block">
+          <i class="far fa-chart-bar statistic-icon"></i>
+          <div class="statistic-info">
+              <p class="statistic-number">${countNumber[3]}</p>
+              <p class="statistic-name">Ongoing</p>
+          </div>
+      </a>
+  </div>                        
+</div>`
   resetForm();
   showScroll(todoArr);
 }
@@ -226,10 +281,6 @@ doneStatusBtn.addEventListener("click", function (ev) {
   let statusIndex = this.getAttribute("index");
   if (statusIndex == 0 || statusIndex) {
     todoArr[statusIndex].sta = checkbox.value;
-    if (checkbox.value.localeCompare("Complete") == 0) {
-      // console.log((checkbox.value).localeCompare("Complete") == 0);
-      // workDones[statusIndex].classList.add('tasks-item__done');
-    }
     this.removeAttribute("index");
   }
   localStorage.setItem("New todo:", JSON.stringify(todoArr)); //chuyển js object -> json string
@@ -247,19 +298,31 @@ function onlyOne(checkbox) {
 }
 
 function checkTask(index) {
-  if (todoArr[index].sta.localeCompare("Complete") == 0) {
-    workDones[index].classList.add("tasks-item__done");
-  } else {
-    workDones[index].classList.toggle("tasks-item__done");
-  }
-}
-
-
-function showScroll(todoArr) {
-  if (todoArr.length <= 4) {
-    scroll.classList.add("scroll-none");
+  var id = document.getElementsByName("task-item__icon").id;
+  if (id == 1) {
+    workDones[index].classList.remove("tasks-item__done");
+    todoArr[index].sta = 'Pending';
+    document.getElementsByName("task-item__icon").id = 0;
   }
   else {
-    scroll.classList.remove("scroll-none");
+    workDones[index].classList.add("tasks-item__done");
+    todoArr[index].sta = 'Complete';
+    document.getElementsByName("task-item__icon").id = 1;
+  }
+
+}
+
+function showScroll(todoArr) {
+  if (todoArr.length <= 2) {
+    scrollHome.classList.add("scroll-none");
+    scrollTask.classList.add("scroll-none");
+  }
+  else if (todoArr.length <= 4) {
+    scrollHome.classList.add("scroll-none");
+    scrollTask.classList.remove("scroll-none");
+  }
+  else {
+    scrollHome.classList.remove("scroll-none");
+    scrollTask.classList.remove("scroll-none");
   }
 }
